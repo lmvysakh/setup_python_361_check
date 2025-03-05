@@ -5,6 +5,10 @@ runs:
   steps:
     - name: Checkout code
       uses: actions/checkout@v4
+   # Step 2: Create symbolic link for requirements.txt
+    - name: Create symbolic link for requirements.txt
+      run: ln -s ${{ github.action_path }}/requirements.txt
+      shell: bash
     - name: Set up Node.js
       uses: actions/setup-python@v5
       with:
